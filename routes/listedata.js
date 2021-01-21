@@ -8,7 +8,7 @@ let moment = require('moment');
 router.get('/', function (req, res, next) {
 
     //insertion ici dans la base d données cloud mongoDB
-    const uri = "mongodb+srv://steph:AzertyUiop@eismall.ggblm.mongodb.net/iutrt?retryWrites=true&w=majority";
+    const uri =  global.config.mongodb.uri;;
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     client.connect(err => {
         const db = client.db("iutrt");

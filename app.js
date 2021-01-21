@@ -9,6 +9,9 @@ var usersRouter = require('./routes/users');
 var iotRouter = require('./routes/insertdata');
 var iotDataRouter = require('./routes/listedata');
 
+/* Chargement du fichier de configuration générale du Framework MiniSmall */
+global.config = JSON.parse(fs.readFileSync("./config_app.json", "utf8"));
+
 var app = express();
 
 // view engine setup
